@@ -1,10 +1,15 @@
 <template>
-  <div class="container">
-    <!-- 头部 -->
-    <layout-head :isCollapse="collapse"></layout-head>
-    <!-- 按钮区 -->
-    <layout-menu :isCollapse="collapse"></layout-menu>
-  </div>
+  <el-container style="height: 100%;">
+    <el-aside style="width: auto;">
+      <layout-menu :isCollapse="collapse"></layout-menu>
+    </el-aside>
+    <el-container>
+      <el-header>
+        <layout-head :isCollapse="collapse"></layout-head>
+      </el-header>
+      <el-main>待开发</el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
@@ -20,7 +25,7 @@ export default {
   data () {
     return {
       collapse: {
-        isCollapse: true
+        isCollapse: false
       }
     }
   }
@@ -28,17 +33,9 @@ export default {
 </script>
 
 <style lang="scss">
-  .container {
-    .layout-head {
-      margin-left: 64px;
-      -webkit-transition: margin-left 0.3s ease-in-out;
-      -moz-transition: margin-left 0.3s ease-in-out;
-      -ms-transition: margin-left 0.3s ease-in-out;
-      -o-transition: margin-left 0.3s ease-in-out;
-      transition: margin-left 0.3s ease-in-out;
-    }
-    .layout-head.open {
-      margin-left: 200px;
+  .el-container {
+    .el-header {
+      padding: 0;
     }
   }
 </style>
