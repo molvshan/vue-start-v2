@@ -20,7 +20,7 @@ export default new Router({
         {
           path: 'recursion',
           name: 'components_recursion',
-          components: recursion
+          component: recursion
         }
       ]
     }

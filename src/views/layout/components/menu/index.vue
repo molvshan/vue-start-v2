@@ -1,12 +1,12 @@
 <template>
   <div class="layout-menu">
-    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse.isCollapse">
-      <el-submenu index="1">
+    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse.isCollapse" :router="openRouter">
+      <el-submenu index="component">
         <template slot="title">
           <i class="iconfont icon-zujian"></i>
           <span slot="title">组件</span>
         </template>
-        <el-menu-item index="1-1">递归组件</el-menu-item>
+        <el-menu-item index="/components/recursion">递归组件</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
@@ -17,6 +17,11 @@ export default {
   props: {
     isCollapse: {
       type: Object
+    }
+  },
+  data () {
+    return {
+      openRouter: true
     }
   },
   methods: {
