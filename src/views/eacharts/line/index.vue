@@ -1,10 +1,12 @@
 <template>
   <div class="container v-eacharts-line">
-    <chart :options="polar"></chart>
+    <chart :options="polar1"></chart>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data () {
     let data = []
@@ -16,7 +18,7 @@ export default {
     }
 
     return {
-      polar: {
+      polar1: {
         title: {
           text: '示例二：折线图'
         },
@@ -48,6 +50,16 @@ export default {
         ]
       }
     }
+  },
+  methods: {
+    getUrl() {
+      axios.get('/gallery/data/asset/data/aqi-beijing.json').then(res => {
+        console.log(res)
+      })
+    }
+  },
+  created() {
+    this.getUrl()
   }
 }
 </script>
