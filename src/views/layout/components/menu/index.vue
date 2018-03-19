@@ -1,36 +1,22 @@
 <template>
   <div class="layout-menu">
-    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse.isCollapse">
-      <el-submenu index="1">
+    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse.isCollapse" :router="openRouter">
+      <el-submenu index="component">
         <template slot="title">
-          <i class="el-icon-location"></i>
-          <span slot="title">导航一</span>
+          <i class="iconfont icon-zujian"></i>
+          <span slot="title">组件</span>
         </template>
-        <el-menu-item-group>
-          <span slot="title">分组一</span>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <span slot="title">选项4</span>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
+        <el-menu-item index="/components/recursion">递归组件</el-menu-item>
       </el-submenu>
-      <!--<el-menu-item index="2">-->
-        <!--<i class="el-icon-menu"></i>-->
-        <!--<span slot="title">导航二</span>-->
-      <!--</el-menu-item>-->
-      <!--<el-menu-item index="3">-->
-        <!--<i class="el-icon-document"></i>-->
-        <!--<span slot="title">导航三</span>-->
-      <!--</el-menu-item>-->
-      <!--<el-menu-item index="4">-->
-        <!--<i class="el-icon-setting"></i>-->
-        <!--<span slot="title">导航四</span>-->
-      <!--</el-menu-item>-->
+      <el-submenu index="echarts">
+        <template slot="title">
+          <i class="iconfont icon-zujian"></i>
+          <span slot="title">eacharts</span>
+        </template>
+        <el-menu-item index="/echarts/example">示例</el-menu-item>
+        <el-menu-item index="/echarts/line">折线图</el-menu-item>
+        <el-menu-item index="/echarts/timeline">折线图</el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>
@@ -40,6 +26,11 @@ export default {
   props: {
     isCollapse: {
       type: Object
+    }
+  },
+  data () {
+    return {
+      openRouter: true
     }
   },
   methods: {
@@ -56,7 +47,7 @@ export default {
 
 <style lang="scss">
   .layout-menu {
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     height: 100%;

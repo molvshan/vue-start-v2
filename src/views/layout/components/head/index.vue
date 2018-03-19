@@ -1,9 +1,6 @@
 <template>
-  <div class="layout-head" :class="{ 'open': !isCollapse.isCollapse }">
-    <el-radio-group v-model="isCollapse.isCollapse">
-      <el-radio-button :label="false">展开</el-radio-button>
-      <el-radio-button :label="true">收起</el-radio-button>
-    </el-radio-group>
+  <div class="layout-head">
+    <span class="head-icon" :class="{ 'open': !isCollapse.isCollapse }"></span>
   </div>
 </template>
 
@@ -17,3 +14,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .layout-head {
+    .head-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-image: url("/static/svg/zhankai.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    }
+  }
+</style>
