@@ -1,7 +1,7 @@
 {
   "name": "vue-start-v2",
   "version": "1.0.0",
-  "description": "vue过渡的学习",
+  "description": "vue的学习积累",
   "author": "wl",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.2.2",
+    "mockjs": "^1.0.1-beta3",
     "vue": "^2.5.2",
     "vue-echarts": "^3.0.5",
     "vue-router": "^3.0.1"
@@ -88,5 +89,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/LuLuYong/vue-transition.git",
+  "license": "MIT"
 }
