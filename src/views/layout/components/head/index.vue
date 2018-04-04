@@ -25,6 +25,7 @@ export default {
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100%;
+      vertical-align: middle;
     }
   }
 </style>

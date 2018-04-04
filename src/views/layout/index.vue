@@ -4,7 +4,7 @@
       <layout-menu :isCollapse="collapse"></layout-menu>
     </el-aside>
     <el-container>
-      <el-header>
+      <el-header height="auto">
         <layout-head :isCollapse="collapse"></layout-head>
       </el-header>
       <el-main><router-view></router-view></el-main>
@@ -35,7 +35,12 @@ export default {
 <style lang="scss">
   .el-container {
     .el-header {
-      padding: 0;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .el-main {
+      padding-top: 5px;
+      padding-bottom: 0;
     }
   }
 </style>

@@ -7,15 +7,16 @@
           <span slot="title">组件</span>
         </template>
         <el-menu-item index="/components/recursion">递归组件</el-menu-item>
+        <el-menu-item index="/components/table">表格组件</el-menu-item>
       </el-submenu>
       <el-submenu index="echarts">
         <template slot="title">
           <i class="iconfont icon-zujian"></i>
           <span slot="title">eacharts</span>
         </template>
-        <el-menu-item index="/echarts/example">示例</el-menu-item>
+        <el-menu-item index="/echarts/example">示例图</el-menu-item>
         <el-menu-item index="/echarts/line">折线图</el-menu-item>
-        <el-menu-item index="/echarts/timeline">折线图</el-menu-item>
+        <el-menu-item index="/echarts/timeline">时间轴图</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>

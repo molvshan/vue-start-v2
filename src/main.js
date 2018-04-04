@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import Vuex from 'vuex'
 
 import axios from 'axios'
 
@@ -18,6 +19,7 @@ Vue.prototype.$http = axios
 
 Vue.use(ElementUI)
 Vue.component('chart', ECharts)
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 

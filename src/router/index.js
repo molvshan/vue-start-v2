@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import layout from '@/views/layout/index'
-import recursion from '@/views/zujian/index'
+// import recursion from '@/views/zujian/index'
 const _import = require('./_import_' + process.env.NODE_ENV)
 
 Vue.use(Router)
@@ -21,7 +21,12 @@ export default new Router({
         {
           path: 'recursion',
           name: 'components_recursion',
-          component: recursion
+          component: _import('zujian/recursion/index')
+        },
+        {
+          path: 'table',
+          name: 'components_table',
+          component: _import('zujian/table/index')
         }
       ]
     },
