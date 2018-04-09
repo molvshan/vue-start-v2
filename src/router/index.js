@@ -51,6 +51,18 @@ export default new Router({
           component: _import('eacharts/timeline/index')
         }
       ]
+    },
+    {
+      path: '/promise',
+      name: 'promise',
+      component: layout,
+      children: [
+        {
+          path: 'basic',
+          name: 'promise-basic',
+          component: _import('promise/basic/index')
+        }
+      ]
     }
   ]
 })

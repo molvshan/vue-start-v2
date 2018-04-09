@@ -18,6 +18,13 @@
         <el-menu-item index="/echarts/line">折线图</el-menu-item>
         <el-menu-item index="/echarts/timeline">时间轴图</el-menu-item>
       </el-submenu>
+      <el-submenu index="promise">
+        <template slot="title">
+          <i class="iconfont icon-zujian"></i>
+          <span slot="title">Promise</span>
+        </template>
+        <el-menu-item index="/promise/basic">基本使用</el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>
