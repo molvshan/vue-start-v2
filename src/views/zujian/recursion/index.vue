@@ -1,15 +1,20 @@
 <template>
   <div class="container v-zujian-recursion">
     <recursion :dataArr="arr"></recursion>
+    <!-- element-ui NavMenu再封装 -->
+    <p class="title">element-ui——NavMenu再封装</p>
+    <nav-menu :menu="menu"></nav-menu>
   </div>
 </template>
 
 <script>
   import recursion from './components/recursion/index'
+  import navMenu from './components/NavMenu/index'
   export default {
     name: 'zujian',
     components: {
-      recursion
+      recursion,
+      navMenu
     },
     props: {
       arr1: {
@@ -68,7 +73,8 @@
             id: '5',
             txt: 'eee'
           }
-        ]
+        ],
+        menu: this.$router.options.routes
       }
     }
   }
@@ -80,6 +86,12 @@
 
     .Active {
       color: blue;
+    }
+
+    .title {
+      padding: 10px 0;
+      color: #ab7272;
+      font-size: 20px;
     }
   }
 </style>

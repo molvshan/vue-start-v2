@@ -1,39 +1,32 @@
 <template>
   <div class="layout-menu">
-    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse.isCollapse" :router="openRouter">
-      <el-submenu index="component">
-        <template slot="title">
-          <i class="iconfont icon-zujian"></i>
-          <span slot="title">组件</span>
-        </template>
-        <el-menu-item index="/components/recursion">递归组件</el-menu-item>
-        <el-menu-item index="/components/table">表格组件</el-menu-item>
-      </el-submenu>
-      <el-submenu index="echarts">
-        <template slot="title">
-          <i class="iconfont icon-zujian"></i>
-          <span slot="title">eacharts</span>
-        </template>
-        <el-menu-item index="/echarts/example">示例图</el-menu-item>
-        <el-menu-item index="/echarts/line">折线图</el-menu-item>
-        <el-menu-item index="/echarts/timeline">时间轴图</el-menu-item>
-      </el-submenu>
-      <el-submenu index="promise">
-        <template slot="title">
-          <i class="iconfont icon-zujian"></i>
-          <span slot="title">Promise</span>
-        </template>
-        <el-menu-item index="/promise/basic">基本使用</el-menu-item>
-      </el-submenu>
+    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" router>
+      <template v-for="item in menu">
+        <el-menu-item v-if="item.name === 'layout'" :key="item.name" :index="item.path">
+          <i :class="['iconfont', item.meta.icon]" v-if="item.meta && item.meta.icon"></i>
+          <span>{{ item.meta.title }}</span>
+        </el-menu-item>
+        <el-submenu v-else :key="item.name" :index="item.path">
+          <template slot="title">
+            <i :class="['iconfont', item.meta.icon]" v-if="item.meta && item.meta.icon"></i>
+            <span>{{ item.meta.title }}</span>
+          </template>
+          <template v-for="child in item.children">
+            <v-nav-menu :key="child.name" v-if="child.children && child.children.length > 0" :menu="child.children"></v-nav-menu>
+            <el-menu-item :key="child.name" v-else :index='item.path + "/" + child.path'>{{ child.meta.title }}</el-menu-item>
+          </template>
+        </el-submenu>
+      </template>
     </el-menu>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'vNavMenu',
   props: {
-    isCollapse: {
-      type: Object
+    menu: {
+      type: Array
     }
   },
   data () {

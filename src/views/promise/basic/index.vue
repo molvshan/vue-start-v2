@@ -34,6 +34,7 @@
 </template>
 
 <script>
+  import '../../../assets/js/prism'
   export default {
     name: 'promise-basic',
     methods: {
@@ -45,6 +46,7 @@
 </script>
 
 <style lang="scss">
+  @import "../../../assets/css/prism.css";
   .v-promise-basic {
     .title {
       text-indent: 2em;

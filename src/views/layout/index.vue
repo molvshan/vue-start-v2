@@ -1,7 +1,7 @@
 <template>
   <el-container style="height: 100%;">
     <el-aside style="width: auto;">
-      <layout-menu :isCollapse="collapse"></layout-menu>
+      <layout-menu :menu="router"></layout-menu>
     </el-aside>
     <el-container>
       <el-header height="auto">
@@ -26,7 +26,8 @@ export default {
     return {
       collapse: {
         isCollapse: false
-      }
+      },
+      router: this.$router.options.routes
     }
   }
 }
