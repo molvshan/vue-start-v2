@@ -105,6 +105,43 @@ export default new Router({
           component: _import('promise/basic/index')
         }
       ]
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: layout,
+      meta: {
+        title: '测试',
+        icon: 'icon-zujian'
+      },
+      children: [
+        {
+          path: '/test3',
+          name: 'test-test3',
+          meta: {
+            title: 'test3'
+          },
+          component: _import('test/index3'),
+          children: [
+            {
+              path: 'test1',
+              name: 'test-test1',
+              meta: {
+                title: 'test1'
+              },
+              component: _import('test/index1')
+            },
+            {
+              path: 'test2',
+              name: 'test-test2',
+              meta: {
+                title: 'test2'
+              },
+              component: _import('test/index2')
+            }
+          ]
+        }
+      ]
     }
   ]
 })
