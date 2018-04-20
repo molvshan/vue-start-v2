@@ -45,33 +45,65 @@ export default {
       polar2: {
         title: {
           text: '示例二：折线图'
-        },
-        tooltip: {
-          trigger: 'axis'
-        },
+        },           // 标题
+        legend: {},                                  // 图例
         xAxis: {
-          data: ['2004-01-01', '2005-01-01']
-        },
+          data: ['2004-01-01', '2005-01-01'],
+          splitLine: {                                     // 显示分隔线
+            show: true
+          }
+        },                                // 直角坐标系中的x轴
         yAxis: {
           splitLine: {
             show: false
           }
-        },
+        },                                // 直角坐标系中的y轴
+        tooltip: {
+          trigger: 'axis'                // 坐标轴触发
+        },             // 提示框
         toolbox: {
-          left: 'center',
+          left: 'right',
           feature: {
             dataZoom: {
-              yAxisIndex: 'none'
-            },
-            restore: {},
-            saveAsImage: {}
+              yAxisIndex: false
+            },                    // 数据区域缩放
+            restore: {},          // 配置项还原按钮
+            saveAsImage: {}       // 保存为图片
           }
-        },
-        dataZoom: [{
-          startValue: '2014-06-01'
-        }, {
-          type: 'inside'
-        }],
+        },               // 工具栏
+        series: {
+          name: 'Beijing AQI',
+          type: 'line',
+          data: [],
+          markLine: {
+            silent: true,
+            data: [
+              {
+                yAxis: 50
+              },
+              {
+                yAxis: 100
+              },
+              {
+                yAxis: 150
+              },
+              {
+                yAxis: 200
+              },
+              {
+                yAxis: 300
+              }
+            ]
+          }            // 图标折线
+        },          // 系列列表
+        dataZoom: [
+          {
+            startValue: '2014-07-01'        // 数据窗口范围的起始数值
+          },
+          {
+            type: 'inside'
+          }
+        ],                             // 用于区域缩放
         visualMap: {
           top: 10,
           right: 10,
@@ -101,31 +133,6 @@ export default {
           }],
           outOfRange: {
             color: '#999'
-          }
-        },
-        series: {
-          name: 'Beijing AQI',
-          type: 'line',
-          data: [],
-          markLine: {
-            silent: true,
-            data: [
-              {
-                yAxis: 50
-              },
-              {
-                yAxis: 100
-              },
-              {
-                yAxis: 150
-              },
-              {
-                yAxis: 200
-              },
-              {
-                yAxis: 300
-              }
-            ]
           }
         }
       }
