@@ -75,26 +75,29 @@ export default {
           name: 'Beijing AQI',
           type: 'line',
           data: [],
-          markLine: {
-            silent: true,
-            data: [
-              {
-                yAxis: 50
-              },
-              {
-                yAxis: 100
-              },
-              {
-                yAxis: 150
-              },
-              {
-                yAxis: 200
-              },
-              {
-                yAxis: 300
-              }
-            ]
-          }            // 图标折线
+          lineStyle: {
+            color: '#336d20'
+          }
+//          markLine: {
+//            silent: true,
+//            data: [
+//              {
+//                yAxis: 50
+//              },
+//              {
+//                yAxis: 100
+//              },
+//              {
+//                yAxis: 150
+//              },
+//              {
+//                yAxis: 200
+//              },
+//              {
+//                yAxis: 300
+//              }
+//            ]
+//          }            // 图标折线
         },          // 系列列表
         dataZoom: [
           {
@@ -103,38 +106,38 @@ export default {
           {
             type: 'inside'
           }
-        ],                             // 用于区域缩放
-        visualMap: {
-          top: 10,
-          right: 10,
-          pieces: [{
-            gt: 0,
-            lte: 50,
-            color: '#096'
-          }, {
-            gt: 50,
-            lte: 100,
-            color: '#ffde33'
-          }, {
-            gt: 100,
-            lte: 150,
-            color: '#ff9933'
-          }, {
-            gt: 150,
-            lte: 200,
-            color: '#cc0033'
-          }, {
-            gt: 200,
-            lte: 300,
-            color: '#660099'
-          }, {
-            gt: 300,
-            color: '#7e0023'
-          }],
-          outOfRange: {
-            color: '#999'
-          }
-        }
+        ]                             // 用于区域缩放
+//        visualMap: {
+//          top: 10,
+//          right: 10,
+//          pieces: [{
+//            gt: 0,
+//            lte: 50,
+//            color: '#096'
+//          }, {
+//            gt: 50,
+//            lte: 100,
+//            color: '#ffde33'
+//          }, {
+//            gt: 100,
+//            lte: 150,
+//            color: '#ff9933'
+//          }, {
+//            gt: 150,
+//            lte: 200,
+//            color: '#cc0033'
+//          }, {
+//            gt: 200,
+//            lte: 300,
+//            color: '#660099'
+//          }, {
+//            gt: 300,
+//            color: '#7e0023'
+//          }],
+//          outOfRange: {
+//            color: '#999'
+//          }
+//        }
       }
     }
   },
