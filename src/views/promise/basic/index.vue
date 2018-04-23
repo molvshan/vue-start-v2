@@ -1,7 +1,7 @@
 <template>
   <div class="container v-promise-basic">
     <p class="title">基础代码如下：</p>
-    <pre class="line-numbers">
+    <pre>
       <code class="language-js">new Promise(function(resolve, reject){
         //做一些异步操作
         setTimeout(function(){
@@ -11,7 +11,7 @@
       });</code>
     </pre>
     <p class="title">输出：</p>
-    <pre class="line-numbers">
+    <pre>
       <code class="language-js">// 执行完成</code>
     </pre>
     <p class="txt">
@@ -34,19 +34,18 @@
 </template>
 
 <script>
-  import '../../../assets/js/prism'
   export default {
     name: 'promise-basic',
-    methods: {
-      aa() {
-        console.log('a')
-      }
+    mounted() {
+      require('@/assets/js/prism.js')
+    },
+    beforeDestroy() {
+      delete require.cache[require.resolve('@/assets/js/prism.js')]
     }
   }
 </script>
 
 <style lang="scss">
-  @import "../../../assets/css/prism.css";
   .v-promise-basic {
     .title {
       text-indent: 2em;
