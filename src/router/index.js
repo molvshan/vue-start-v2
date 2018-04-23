@@ -57,7 +57,7 @@ export default new Router({
       name: 'echarts',
       component: layout,
       meta: {
-        title: '图标',
+        title: 'echarts',
         icon: 'icon-zujian'
       },
       children: [
@@ -76,6 +76,14 @@ export default new Router({
             title: '折线图'
           },
           component: _import('eacharts/line/index')
+        },
+        {
+          path: 'bar',
+          name: 'echarts_bar',
+          meta: {
+            title: '柱状图'
+          },
+          component: _import('eacharts/bar/index')
         },
         {
           path: 'timeline',
