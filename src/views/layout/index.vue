@@ -1,14 +1,12 @@
 <template>
   <el-container style="height: 100%;">
-    <el-aside style="width: auto;">
-      <layout-menu :menu="router"></layout-menu>
-    </el-aside>
-    <el-container>
-      <el-header height="auto">
-        <layout-head :isCollapse="collapse"></layout-head>
-      </el-header>
-      <el-main><router-view></router-view></el-main>
-    </el-container>
+    <el-header height="auto">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item v-for="item in breadcrumbLists" :key="item.name" :to="{ path: item.path }">{{ item.meta.title }}</el-breadcrumb-item>
+      </el-breadcrumb>
+    </el-header>
+    <el-main><router-view></router-view></el-main>
+    <el-footer>Footer</el-footer>
   </el-container>
 </template>
 
@@ -24,10 +22,12 @@ export default {
   },
   data () {
     return {
-      collapse: {
-        isCollapse: false
-      },
-      router: this.$router.options.routes
+      breadcrumbLists: [{ path: '/', name: 'dashboard', meta: { title: '首页' } }].concat(this.$route.matched)
+    }
+  },
+  watch: {
+    $route(obj) {
+      this.breadcrumbLists = [{ path: '/', name: 'dashboard', meta: { title: '首页' } }].concat(obj.matched)
     }
   }
 }
@@ -36,8 +36,13 @@ export default {
 <style lang="scss">
   .el-container {
     .el-header {
-      padding: 5px 0;
+      padding: 10px 0;
       border-bottom: 1px solid #eee;
+
+      .el-breadcrumb {
+        font-size: 16px;
+        padding-left: 40px;
+      }
     }
     .el-main {
       padding-top: 5px;

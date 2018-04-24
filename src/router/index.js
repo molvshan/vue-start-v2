@@ -10,20 +10,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'layout',
-      component: layout,
-      redirect: 'dashboard',
+      name: 'dashboard',
+      component: _import('dashboard/index'),
       meta: {
         title: '首页',
         icon: 'icon-shouye'
-      },
-      children: [
-        {
-          path: 'dashboard',
-          name: 'dashboard',
-          component: _import('dashboard/index')
-        }
-      ]
+      }
     },
     {
       path: '/components',
@@ -56,6 +48,7 @@ export default new Router({
       path: '/echarts',
       name: 'echarts',
       component: layout,
+      redirect: '/echarts/example',
       meta: {
         title: 'echarts',
         icon: 'icon-zujian'

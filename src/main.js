@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
-import Vuex from 'vuex'
+import store from './store'
 
 import axios from 'axios'
 
@@ -19,7 +19,6 @@ Vue.prototype.$http = axios
 
 Vue.use(ElementUI)
 Vue.component('chart', ECharts)
-Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
@@ -27,6 +26,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
