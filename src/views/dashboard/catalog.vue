@@ -1,21 +1,14 @@
 <template>
   <div class="v-dashboard-catalog">
     <template v-for="item in routers">
-      <template v-if="item.name === 'dashboard'">
-        <div class="v-catalog-title" :key="item.name">
-          <span>{{ item.meta.title }}</span>
+      <div class="v-catalog-title" :key="item.name">
+        <span>{{ item.meta.title }}</span>
+      </div>
+      <template v-for="child in item.children">
+        <v-catalog class="v-catalog-title" :key="child.name" v-if="child.children && child.children.length > 0" :routers="item.children"></v-catalog>
+        <div class="v-catalog-title-t" v-else :key="child.name">
+          <i>{{ child.meta.title }}</i>
         </div>
-      </template>
-      <template v-else>
-        <div class="v-catalog-title" :key="item.name">
-          <span>{{ item.meta.title }}</span>
-        </div>
-        <template v-for="child in item.children">
-          <v-catalog class="v-catalog-title" :key="child.name" v-if="child.children && child.children.length > 0" :routers="item.children"></v-catalog>
-          <div class="v-catalog-title-t" v-else :key="child.name">
-            <i>{{ child.meta.title }}</i>
-          </div>
-        </template>
       </template>
     </template>
   </div>

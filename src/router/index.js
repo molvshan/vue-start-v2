@@ -23,7 +23,7 @@ export default new Router({
           name: 'catalog',
           component: _import('dashboard/index'),
           meta: {
-            title: '首页'
+            title: '目录'
           }
         }
       ]
