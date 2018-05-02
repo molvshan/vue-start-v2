@@ -29,14 +29,52 @@ export default new Router({
       ]
     },
     {
+      path: '/vuex',
+      name: 'vuex',
+      component: layout,
+      meta: {
+        title: 'vueX',
+        icon: 'icon-zujian'
+      },
+      children: [
+        {
+          path: 'catalog_vuex',
+          name: 'catalog_vuex',
+          meta: {
+            title: 'vuex目录'
+          },
+          component: _import('selfCatalog'),
+          hidden: true
+        },
+        {
+          path: 'start',
+          name: 'vuex_start',
+          meta: {
+            title: '简单示例'
+          },
+          component: _import('vuex/start/index')
+        }
+      ]
+    },
+    {
       path: '/components',
       name: 'components',
       component: layout,
+      redirect: 'catalog_zujian',
       meta: {
         title: '组件',
         icon: 'icon-zujian'
       },
       children: [
+        {
+          path: 'catalog_zujian',
+          name: 'catalog_zujian',
+          meta: {
+            title: '组件目录'
+          },
+          component: _import('selfCatalog'),
+          hidden: true
+        },
         {
           path: 'recursion',
           name: 'components_recursion',
@@ -59,12 +97,21 @@ export default new Router({
       path: '/echarts',
       name: 'echarts',
       component: layout,
-      redirect: '/echarts/example',
+      redirect: 'catalog_echarts',
       meta: {
         title: 'echarts',
         icon: 'icon-zujian'
       },
       children: [
+        {
+          path: 'catalog_echarts',
+          name: 'catalog_echarts',
+          meta: {
+            title: 'echarts目录'
+          },
+          component: _import('selfCatalog'),
+          hidden: true
+        },
         {
           path: 'example',
           name: 'echarts_example',
@@ -103,11 +150,21 @@ export default new Router({
       path: '/promise',
       name: 'promise',
       component: layout,
+      redirect: 'catalog_promise',
       meta: {
         title: 'promise',
         icon: 'icon-zujian'
       },
       children: [
+        {
+          path: 'catalog_promise',
+          name: 'catalog_promise',
+          meta: {
+            title: 'Promise目录'
+          },
+          component: _import('selfCatalog'),
+          hidden: true
+        },
         {
           path: 'basic',
           name: 'promise-basic',

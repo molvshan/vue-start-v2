@@ -1,12 +1,12 @@
 <template>
   <div class="v-dashboard-catalog">
     <template v-for="item in routers">
-      <div class="v-catalog-title" :key="item.name">
+      <div class="v-catalog-title" :key="item.name" v-if="!item.hidden">
         <span>{{ item.meta.title }}</span>
       </div>
       <template v-for="child in item.children">
         <v-catalog class="v-catalog-title" :key="child.name" v-if="child.children && child.children.length > 0" :routers="item.children"></v-catalog>
-        <div class="v-catalog-title-t" v-else :key="child.name">
+        <div class="v-catalog-title-t" v-else-if="!child.hidden" :key="child.name">
           <i>{{ child.meta.title }}</i>
         </div>
       </template>

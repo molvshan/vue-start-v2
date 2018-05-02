@@ -13,7 +13,10 @@
         </el-breadcrumb>
       </el-header>
       <el-main><router-view></router-view></el-main>
-      <el-footer>Footer</el-footer>
+      <el-footer>
+        <div class="left" @click="goPath('bo')">博客目录</div>
+        <div class="right" @click="goPath('be')">本章目录</div>
+      </el-footer>
     </el-container>
   </el-container>
 </template>
@@ -43,9 +46,16 @@ export default {
       }
     }
   },
+  methods: {
+    goPath(val) {
+      if (val === 'bo') {
+        this.$router.push({ path: '/' });
+      } else {
+        this.$router.push({ path: this.$route.matched[0].redirect });
+      }
+    }
+  },
   created() {
-    console.log(this.$route.matched.length);
-    console.log(this.$route.matched[1]);
     if (this.$route.name !== 'catalog') {
       this.breadcrumbLists = [{ path: '/', name: 'dashboard', meta: { title: '首页' } }].concat(this.$route.matched);
     } else {
@@ -70,6 +80,18 @@ export default {
     .el-main {
       padding-top: 5px;
       padding-bottom: 0;
+    }
+    .el-footer {
+      overflow: hidden;
+      line-height: 60px;
+      .left {
+        float: left;
+        cursor: pointer;
+      }
+      .right {
+        float: right;
+        cursor: pointer;
+      }
     }
   }
 </style>
