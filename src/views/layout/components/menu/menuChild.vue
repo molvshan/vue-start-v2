@@ -1,7 +1,7 @@
 <template>
   <div class="v-menu-child">
     <template v-for="item in menu">
-      <el-menu-item v-if="item.name === 'layout'" :key="item.name" :index="item.path">
+      <el-menu-item v-if="item.name === 'dashboard'" :key="item.name" :index="item.path">
         <i :class="['iconfont', item.meta.icon]" v-if="item.meta && item.meta.icon"></i>
         <span>{{ item.meta.title }}</span>
       </el-menu-item>

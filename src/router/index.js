@@ -11,11 +11,22 @@ export default new Router({
     {
       path: '/',
       name: 'dashboard',
-      component: _import('dashboard/index'),
+      component: layout,
+      redirect: 'catalog',
       meta: {
         title: '首页',
         icon: 'icon-shouye'
-      }
+      },
+      children: [
+        {
+          path: 'catalog',
+          name: 'catalog',
+          component: _import('dashboard/index'),
+          meta: {
+            title: '首页'
+          }
+        }
+      ]
     },
     {
       path: '/components',
