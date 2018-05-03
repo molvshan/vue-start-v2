@@ -7,6 +7,8 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
       path: '/',
@@ -32,13 +34,14 @@ export default new Router({
       path: '/vuex',
       name: 'vuex',
       component: layout,
+      redirect: 'catalog_vuex',
       meta: {
         title: 'vueX',
         icon: 'icon-zujian'
       },
       children: [
         {
-          path: 'catalog_vuex',
+          path: '/catalog_vuex',
           name: 'catalog_vuex',
           meta: {
             title: 'vuex目录'
@@ -53,6 +56,24 @@ export default new Router({
             title: '简单示例'
           },
           component: _import('vuex/start/index')
+        },
+        {
+          path: '/core',
+          name: 'vuex-core',
+          meta: {
+            title: '核心概念'
+          },
+          component: _import('vuex/core/index'),
+          children: [
+            {
+              path: 'state',
+              name: 'vuex-core-state',
+              meta: {
+                title: 'State'
+              },
+              component: _import('vuex/core/state/index')
+            }
+          ]
         }
       ]
     },
@@ -67,7 +88,7 @@ export default new Router({
       },
       children: [
         {
-          path: 'catalog_zujian',
+          path: '/catalog_zujian',
           name: 'catalog_zujian',
           meta: {
             title: '组件目录'
@@ -104,7 +125,7 @@ export default new Router({
       },
       children: [
         {
-          path: 'catalog_echarts',
+          path: '/catalog_echarts',
           name: 'catalog_echarts',
           meta: {
             title: 'echarts目录'
@@ -157,7 +178,7 @@ export default new Router({
       },
       children: [
         {
-          path: 'catalog_promise',
+          path: '/catalog_promise',
           name: 'catalog_promise',
           meta: {
             title: 'Promise目录'
@@ -179,11 +200,21 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: layout,
+      redirect: 'catalog_test',
       meta: {
         title: '测试',
         icon: 'icon-zujian'
       },
       children: [
+        {
+          path: '/catalog_test',
+          name: 'catalog_test',
+          meta: {
+            title: '组件目录'
+          },
+          component: _import('selfCatalog'),
+          hidden: true
+        },
         {
           path: '/test3',
           name: 'test-test3',
