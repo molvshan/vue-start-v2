@@ -23,7 +23,7 @@
       </code>
     </pre>
     <p class="v-prism-txt">
-      以上是vue-cli的写法，首先是先引用vue和vuex，然后通过.use()方法注册vuex，最后new一个vuex实例(当然，前提是已经<a target="_blank" href="https://vuex.vuejs.org/zh-cn/installation.html">通过npm将vuex安装到项目</a>)
+      以上是vue-cli的写法，首先在项目src目录下新建一个stroe文件夹，然后在store文件夹下新建一个js文件，js文件内容为上面代码。首先引用vue和vuex，然后通过.use()方法注册vuex，最后new一个vuex实例(当然，前提是已经<a target="_blank" href="https://vuex.vuejs.org/zh-cn/installation.html">通过npm将vuex安装到项目</a>)
     </p>
     <p class="v-prism-title">
       当使用如下代码改变state中count的值，并打印这个值时:
