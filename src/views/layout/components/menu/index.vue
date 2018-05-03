@@ -1,6 +1,6 @@
 <template>
   <div class="layout-menu">
-    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" router>
+    <el-menu backgroundColor="#f6f6f6" text-color="#000" class="el-menu-vertical-demo" router>
       <menu-child :menu="menu"></menu-child>
     </el-menu>
   </div>
@@ -33,7 +33,7 @@ export default {
     left: 0;
     top: 0;
     height: 100%;
-    background-color: #000;
+    background-color: #f6f6f6;
     .el-menu {
       border-right: none;
     }

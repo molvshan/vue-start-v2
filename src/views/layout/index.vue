@@ -12,7 +12,9 @@
           </el-breadcrumb-item>
         </el-breadcrumb>
       </el-header>
-      <el-main><router-view></router-view></el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
       <el-footer>
         <div class="left" @click="goPath('bo')">博客目录</div>
         <div class="right" @click="goPath('be')">本章目录</div>
@@ -39,7 +41,6 @@ export default {
   },
   watch: {
     $route(obj) {
-      console.log(obj.matched);
       if (obj.redirectedFrom !== '/') {
         this.breadcrumbLists = [{ path: '/', name: 'dashboard', meta: { title: '首页' } }].concat(obj.matched);
       } else {
