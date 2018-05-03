@@ -14,7 +14,7 @@ export default new Router({
       path: '/',
       name: 'dashboard',
       component: layout,
-      redirect: 'catalog',
+      redirect: '/catalog',
       meta: {
         title: '首页',
         icon: 'icon-shouye'
@@ -34,7 +34,7 @@ export default new Router({
       path: '/vuex',
       name: 'vuex',
       component: layout,
-      redirect: 'catalog_vuex',
+      redirect: '/catalog_vuex',
       meta: {
         title: 'vueX',
         icon: 'icon-zujian'
@@ -64,7 +64,17 @@ export default new Router({
             title: '核心概念'
           },
           component: _import('vuex/core/index'),
+          redirect: '/catalog_vuex_core',
           children: [
+            {
+              path: '/catalog_vuex_core',
+              name: 'catalog_vuex_core',
+              meta: {
+                title: 'vuex——核心概念目录'
+              },
+              component: _import('selfCatalog'),
+              hidden: true
+            },
             {
               path: 'state',
               name: 'vuex-core-state',
@@ -81,7 +91,7 @@ export default new Router({
       path: '/components',
       name: 'components',
       component: layout,
-      redirect: 'catalog_zujian',
+      redirect: '/catalog_zujian',
       meta: {
         title: '组件',
         icon: 'icon-zujian'
@@ -118,7 +128,7 @@ export default new Router({
       path: '/echarts',
       name: 'echarts',
       component: layout,
-      redirect: 'catalog_echarts',
+      redirect: '/catalog_echarts',
       meta: {
         title: 'echarts',
         icon: 'icon-zujian'
