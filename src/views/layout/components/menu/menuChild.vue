@@ -5,7 +5,7 @@
         <i :class="['iconfont', item.meta.icon]" v-if="item.meta && item.meta.icon"></i>
         <span>{{ item.meta.title }}</span>
       </el-menu-item>
-      <el-submenu v-else-if="!item.hidden" :key="item.name" :index="item.path">
+      <el-submenu v-else-if="!item.hidden && item.children && item.children.length > 0" :key="item.name" :index="item.path">
         <template slot="title">
           <i :class="['iconfont', item.meta.icon]" v-if="item.meta && item.meta.icon"></i>
           <span>{{ item.meta.title }}</span>
