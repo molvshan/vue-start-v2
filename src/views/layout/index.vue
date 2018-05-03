@@ -7,8 +7,8 @@
       <el-header height="auto">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item v-for="(item, index) in breadcrumbLists" :key="item.name">
-            <span v-if='item.redirect==="noredirect"||index===breadcrumbLists.length-1'>{{ item.meta.title }}</span>
-            <router-link v-else :to="item.redirect||item.path">{{ item.meta.title }}</router-link>
+            <span v-if='item.redirect==="noredirect" || index === breadcrumbLists.length - 1'>{{ item.meta.title }}</span>
+            <router-link v-else :to="item.path || item.redirect">{{ item.meta.title }}</router-link>
           </el-breadcrumb-item>
         </el-breadcrumb>
       </el-header>
@@ -39,6 +39,7 @@ export default {
   },
   watch: {
     $route(obj) {
+      console.log(obj.matched);
       if (obj.redirectedFrom !== '/') {
         this.breadcrumbLists = [{ path: '/', name: 'dashboard', meta: { title: '首页' } }].concat(obj.matched);
       } else {
