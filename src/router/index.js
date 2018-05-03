@@ -55,7 +55,7 @@ export default new Router({
           meta: {
             title: '简单示例'
           },
-          component: _import('vuex/start/index')
+          component: _import('workStudy/vuex/start/index')
         },
         {
           path: '/core',
@@ -63,7 +63,7 @@ export default new Router({
           meta: {
             title: '核心概念'
           },
-          component: _import('vuex/core/index'),
+          component: _import('workStudy/vuex/core/index'),
           redirect: '/catalog_vuex_core',
           children: [
             {
@@ -81,7 +81,7 @@ export default new Router({
               meta: {
                 title: 'State'
               },
-              component: _import('vuex/core/state/index')
+              component: _import('workStudy/vuex/core/state/index')
             }
           ]
         }
@@ -112,7 +112,7 @@ export default new Router({
           meta: {
             title: '递归组件'
           },
-          component: _import('zujian/recursion/index')
+          component: _import('workStudy/zujian/recursion/index')
         },
         {
           path: 'table',
@@ -120,7 +120,7 @@ export default new Router({
           meta: {
             title: 'element-uiTable'
           },
-          component: _import('zujian/table/index')
+          component: _import('workStudy/zujian/table/index')
         }
       ]
     },
@@ -149,7 +149,7 @@ export default new Router({
           meta: {
             title: '示例图'
           },
-          component: _import('eacharts/example/index')
+          component: _import('workStudy/eacharts/example/index')
         },
         {
           path: 'line',
@@ -157,7 +157,7 @@ export default new Router({
           meta: {
             title: '折线图'
           },
-          component: _import('eacharts/line/index')
+          component: _import('workStudy/eacharts/line/index')
         },
         {
           path: 'bar',
@@ -165,7 +165,7 @@ export default new Router({
           meta: {
             title: '柱状图'
           },
-          component: _import('eacharts/bar/index')
+          component: _import('workStudy/eacharts/bar/index')
         },
         {
           path: 'timeline',
@@ -173,7 +173,7 @@ export default new Router({
           meta: {
             title: '时间轴'
           },
-          component: _import('eacharts/timeline/index')
+          component: _import('workStudy/eacharts/timeline/index')
         }
       ]
     },
@@ -202,7 +202,7 @@ export default new Router({
           meta: {
             title: '基础用法'
           },
-          component: _import('promise/basic/index')
+          component: _import('workStudy/promise/basic/index')
         }
       ]
     },
@@ -220,7 +220,7 @@ export default new Router({
           path: '/catalog_test',
           name: 'catalog_test',
           meta: {
-            title: '组件目录'
+            title: '测试目录'
           },
           component: _import('selfCatalog'),
           hidden: true
@@ -231,7 +231,7 @@ export default new Router({
           meta: {
             title: 'test3'
           },
-          component: _import('test/index3'),
+          component: _import('workStudy/test/index3'),
           children: [
             {
               path: 'test1',
@@ -239,7 +239,7 @@ export default new Router({
               meta: {
                 title: 'test1'
               },
-              component: _import('test/index1')
+              component: _import('workStudy/test/index1')
             },
             {
               path: 'test2',
@@ -247,7 +247,7 @@ export default new Router({
               meta: {
                 title: 'test2'
               },
-              component: _import('test/index2')
+              component: _import('workStudy/test/index2')
             }
           ]
         }
