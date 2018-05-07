@@ -6,6 +6,7 @@
 
 <script>
   import vCatalog from './dashboard/catalog';
+  import { arr, filterRouter } from '@/utils/recursion';
   export default {
     name: 'self-catalog',
     components: {
@@ -17,13 +18,11 @@
       }
     },
     created() {
+      const length = this.$route.matched.length;
       const routers = this.$router.options.routes;
-      const nowName = this.$route.matched[0].name;
-      routers.forEach(item => {
-        if (item.name === nowName) {
-          this.routers = [item];
-        }
-      })
+      const nowName = this.$route.matched[length - 1].parent.name;
+      filterRouter(routers, nowName);
+      this.routers = arr;
     }
   }
 </script>

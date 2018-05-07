@@ -1,6 +1,6 @@
 <template>
   <div class="v-dashboard-catalog">
-    <template v-for="item in routers">
+    <template v-for="item in routers" v-if="!item.hidden && item.children && item.children.length > 0">
       <div class="v-catalog-title" :key="item.name" v-if="!item.hidden">
         <span>{{ item.meta.title }}</span>
       </div>
@@ -31,7 +31,7 @@
     margin: 0 auto;
 
     .v-catalog-title {
-      font-size: 18px;
+      font-size: 20px;
       text-align: left;
       padding-top: 5px;
 
