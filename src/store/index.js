@@ -5,11 +5,32 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 14,
+    status: 'normal',
+    todos: [
+      {
+        id: '1',
+        label: 'a'
+      },
+      {
+        id: '2',
+        label: 'b'
+      },
+      {
+        id: '3',
+        label: 'c'
+      }
+    ]
   },
   mutations: {
     increment(state) {
       state.count++
+    }
+  },
+  getters: {
+    addCount: state =>  state.count + 11,
+    getTodoById: state => id => {
+      return state.todos.find(todo => todo.id === id)
     }
   }
 })

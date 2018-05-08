@@ -82,6 +82,14 @@ export default new Router({
                 title: 'State'
               },
               component: _import('workStudy/vuex/core/state/index')
+            },
+            {
+              path: 'getter',
+              name: 'vuex-core-getter',
+              meta: {
+                title: 'Getter'
+              },
+              component: _import('workStudy/vuex/core/getter/index')
             }
           ]
         }
@@ -203,53 +211,6 @@ export default new Router({
             title: '基础用法'
           },
           component: _import('workStudy/promise/basic/index')
-        }
-      ]
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: layout,
-      redirect: 'catalog_test',
-      meta: {
-        title: '测试',
-        icon: 'icon-zujian'
-      },
-      children: [
-        {
-          path: '/catalog_test',
-          name: 'catalog_test',
-          meta: {
-            title: '测试目录'
-          },
-          component: _import('selfCatalog'),
-          hidden: true
-        },
-        {
-          path: '/test3',
-          name: 'test-test3',
-          meta: {
-            title: 'test3'
-          },
-          component: _import('workStudy/test/index3'),
-          children: [
-            {
-              path: 'test1',
-              name: 'test-test1',
-              meta: {
-                title: 'test1'
-              },
-              component: _import('workStudy/test/index1')
-            },
-            {
-              path: 'test2',
-              name: 'test-test2',
-              meta: {
-                title: 'test2'
-              },
-              component: _import('workStudy/test/index2')
-            }
-          ]
         }
       ]
     }
