@@ -90,6 +90,14 @@ export default new Router({
                 title: 'Getter'
               },
               component: _import('workStudy/vuex/core/getter/index')
+            },
+            {
+              path: 'mutation',
+              name: 'vuex-core-mutation',
+              meta: {
+                title: 'Mutation'
+              },
+              component: _import('workStudy/vuex/core/mutation/index')
             }
           ]
         }
