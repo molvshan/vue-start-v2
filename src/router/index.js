@@ -37,7 +37,7 @@ export default new Router({
       redirect: '/catalog_vuex',
       meta: {
         title: 'vueX',
-        icon: 'icon-zujian'
+        icon: 'icon-zhuangtai'
       },
       children: [
         {
@@ -98,6 +98,22 @@ export default new Router({
                 title: 'Mutation'
               },
               component: _import('workStudy/vuex/core/mutation/index')
+            },
+            {
+              path: 'action',
+              name: 'vuex-core-action',
+              meta: {
+                title: 'Action'
+              },
+              component: _import('workStudy/vuex/core/action/index')
+            },
+            {
+              path: 'module',
+              name: 'vuex-core-module',
+              meta: {
+                title: 'Moudle'
+              },
+              component: _import('workStudy/vuex/core/module/index')
             }
           ]
         }
@@ -147,7 +163,7 @@ export default new Router({
       redirect: '/catalog_echarts',
       meta: {
         title: 'echarts',
-        icon: 'icon-zujian'
+        icon: 'icon-tubiao'
       },
       children: [
         {
@@ -197,10 +213,10 @@ export default new Router({
       path: '/promise',
       name: 'promise',
       component: layout,
-      redirect: 'catalog_promise',
+      redirect: '/catalog_promise',
       meta: {
         title: 'promise',
-        icon: 'icon-zujian'
+        icon: 'icon-promise'
       },
       children: [
         {

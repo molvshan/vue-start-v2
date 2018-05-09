@@ -23,9 +23,13 @@ const store = new Vuex.Store({
     ]
   },
   mutations: {
-    increment(state, obj) {
-      console.log(obj.type);
-      state.count += obj.num;
+    increment(state) {
+      state.count++
+    }
+  },
+  actions: {
+    increment (context) {
+      context.commit('increment')
     }
   },
   getters: {
