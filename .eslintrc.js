@@ -26,6 +26,9 @@ module.exports = {
     "no-multi-spaces": 0,//不能用多余的空格
     // allow async-await
     'generator-star-spacing': 'off',
+    // 关闭语句强制分号结尾
+    "semi": [0],
+    "no-multiple-empty-lines": [1, {"max": 2}],//空行最多不能超过2行
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }

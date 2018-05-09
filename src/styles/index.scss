@@ -1,0 +1,46 @@
+body {
+  font-size: 14px;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+/**
+  note: 红字标题
+  title: 黑字副标题
+  txt: 内容
+  lists: ul
+  list: li
+*/
+
+.v-title {
+  text-indent: 2em;
+  font-size: 16px;
+}
+
+.v-txt {
+  text-indent: 2em;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.v-txt a {
+  color: #4a4ad4;
+  text-decoration: underline;
+}
+
+.v-note {
+  font-size: 20px;
+  color: #cd0200;
+}
+
+.v-lists .v-list {
+  list-style: inside;
+  text-indent: 2em;
+}

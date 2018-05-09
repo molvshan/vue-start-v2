@@ -1,45 +1,27 @@
 <template>
   <div class="layout-menu">
-    <el-menu background-color='#000' text-color="#fff" default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse.isCollapse" :router="openRouter">
-      <el-submenu index="component">
-        <template slot="title">
-          <i class="iconfont icon-zujian"></i>
-          <span slot="title">组件</span>
-        </template>
-        <el-menu-item index="/components/recursion">递归组件</el-menu-item>
-      </el-submenu>
-      <el-submenu index="echarts">
-        <template slot="title">
-          <i class="iconfont icon-zujian"></i>
-          <span slot="title">eacharts</span>
-        </template>
-        <el-menu-item index="/echarts/example">示例</el-menu-item>
-        <el-menu-item index="/echarts/line">折线图</el-menu-item>
-        <el-menu-item index="/echarts/timeline">折线图</el-menu-item>
-      </el-submenu>
+    <el-menu backgroundColor="#f6f6f6" text-color="#000" class="el-menu-vertical-demo" router>
+      <menu-child :menu="menu"></menu-child>
     </el-menu>
   </div>
 </template>
 
 <script>
+import menuChild from './menuChild'
+
 export default {
+  name: 'vNavMenu',
+  components: {
+    menuChild
+  },
   props: {
-    isCollapse: {
-      type: Object
+    menu: {
+      type: Array
     }
   },
   data () {
     return {
       openRouter: true
-    }
-  },
-  methods: {
-    handleOpen (key, keyPath) {
-      console.log(key, keyPath)
-      console.log('1')
-    },
-    handleClose (key, keyPath) {
-      console.log(key, keyPath)
     }
   }
 }
@@ -51,7 +33,7 @@ export default {
     left: 0;
     top: 0;
     height: 100%;
-    background-color: #000;
+    background-color: #f6f6f6;
     .el-menu {
       border-right: none;
     }
