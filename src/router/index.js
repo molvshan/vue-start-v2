@@ -147,6 +147,14 @@ export default new Router({
           component: _import('workStudy/zujian/recursion/index')
         },
         {
+          path: 'recursion-box',
+          name: 'components_recursionBox',
+          meta: {
+            title: '递归组件—无线分割div'
+          },
+          component: _import('workStudy/zujian/recursion-box/index')
+        },
+        {
           path: 'table',
           name: 'components_table',
           meta: {
