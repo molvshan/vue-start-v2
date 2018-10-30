@@ -18,7 +18,7 @@
     </pre>
     <p class="v-txt">
       在上面的代码中，首先执行了一个异步操作，也就是setTimeout，在2秒后输出'执行完成'，并且调用resolve方法<br/>
-      需要注意的是，在上面代码中，知识new了一个promise对象，并没有去调用它而它就执行了，所以在使用promise的时候一般把它封装在一个函数里，然后去运行这个函数，代码如下
+      需要注意的是，在上面代码中，只是new了一个promise对象，并没有去调用它而它就执行了，所以在使用promise的时候一般把它封装在一个函数里，然后去运行这个函数，代码如下
     </p>
     <pre class="line-numbers">
       <code class="language-js">
@@ -30,8 +30,8 @@
               resolve('随便什么数据');
             }, 2000)
           })
-          runAsync()
         }
+        runAsync();
       </code>
     </pre>
   </div>

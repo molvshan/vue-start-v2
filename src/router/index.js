@@ -7,7 +7,7 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     {
